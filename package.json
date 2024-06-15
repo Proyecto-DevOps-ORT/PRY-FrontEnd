@@ -6,7 +6,8 @@
     "format": "prettier --write .",
     "build": "webpack --mode=production",
     "analyze": "webpack --env analyze",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "linters-ci": "eslint . && stylelint '**/*.css'"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
