@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   build-dev:
-    uses: <Organization>/<repoName>/.github/workflows/deploy-to-s3.yml@staging
+    uses: Proyecto-DevOps-ORT/PRY-FrontEnd/.github/workflows/deploy-to-s3.yml@staging
     with:
       CI_ENV: staging
       CONTENTFUL_ENVIRONMENT: 'staging'
