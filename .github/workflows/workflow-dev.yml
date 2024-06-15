@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   build-dev:
-    uses: <Organization>/<repoName>/.github/workflows/deploy-to-s3.yml@develop
+    uses: Proyecto-DevOps-ORT/PRY-FrontEnd/.github/workflows/deploy-to-s3.yml@develop
     with:
       CI_ENV: develop
       CONTENTFUL_ENVIRONMENT: 'develop'
