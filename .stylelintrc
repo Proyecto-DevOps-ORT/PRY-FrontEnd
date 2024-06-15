@@ -1,6 +1,6 @@
 {
   "severity": "warning",
-  "extends": "stylelint-config-jam3",
+  "extends": "stylelint-config-standard",
   "rules": {
     "block-no-empty": null,
     "declaration-bang-space-before": null,
