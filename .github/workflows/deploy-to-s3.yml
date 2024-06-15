@@ -54,9 +54,12 @@ jobs:
 
       - name: Run Linters
         run: npm run linters-ci
-        
+
       - name: Change permissions of build.sh
         run: chmod +x ./.github/scripts/build.sh
+
+      - name: Change permissions of deploy.sh
+        run: chmod +x ./.github/scripts/deploy.sh
 
       - name: Build NextJS static site
         run: ./.github/scripts/build.sh
