@@ -1,0 +1,27 @@
+name: Github Action Workflow PROD
+
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types:
+      - build-prod
+  workflow_dispatch:
+
+concurrency:
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-dev:
+    uses: <Organization>/<repoName>/.github/workflows/deploy-to-s3.yml@main
+    with:
+      CI_ENV: production
+      CONTENTFUL_ENVIRONMENT: 'main'
+    secrets:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
+      AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN}}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      S3_ORIGIN_BUCKET: ${{ secrets.S3_ORIGIN_BUCKET_PRD }}
