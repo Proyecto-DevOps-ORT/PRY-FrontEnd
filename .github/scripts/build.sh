@@ -10,4 +10,4 @@ printenv
 
 rm -rf ./out
 
-npm run build:static
+npm run build
