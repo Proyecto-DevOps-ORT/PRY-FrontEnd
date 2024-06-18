@@ -5,9 +5,7 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build --prod",
-    "test": "nx test",
-    "linters-ci": "eslint 'apps/**/*.{ts,tsx}'",
-     "lint": "eslint 'apps/catalog/src/app/**/*.ts' 'apps/catalog/src/app/**/*.tsx' 'apps/catalog-e2e/src/app/**/*.ts' 'apps/catalog-e2e/src/app/**/*.tsx' 'apps/checkout/src/app/**/*.ts' 'apps/checkout/src/app/**/*.tsx'"
+    "test": "nx test"
   },
   "private": true,
   "dependencies": {
@@ -50,6 +48,5 @@
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
     "typescript": "~4.8.2"
-  },
-  "homepage": "."
+  }
 }
