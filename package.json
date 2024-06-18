@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build --prod",
-    "test": "nx test"
+    "test": "nx test",
+    "linters-ci": "eslint ."
   },
   "private": true,
   "dependencies": {
