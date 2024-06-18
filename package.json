@@ -6,7 +6,8 @@
     "start": "nx serve",
     "build": "nx build --prod",
     "test": "nx test",
-    "linters-ci": "eslint 'apps/**/*.{ts,tsx}'"
+    "linters-ci": "eslint 'apps/**/*.{ts,tsx}'",
+     "lint": "eslint 'apps/catalog/src/app/**/*.ts' 'apps/catalog/src/app/**/*.tsx' 'apps/catalog-e2e/src/app/**/*.ts' 'apps/catalog-e2e/src/app/**/*.tsx' 'apps/checkout/src/app/**/*.ts' 'apps/checkout/src/app/**/*.tsx'"
   },
   "private": true,
   "dependencies": {
