@@ -1,9 +1,4 @@
-dist
-node_modules
-.gitignore
-.prettierignore
-LICENSE
-*.ejs
-yarn.lock
-coverage
-pnpm-lock.yaml
+# Add files here to ignore them from prettier formatting
+
+/dist
+/coverage
