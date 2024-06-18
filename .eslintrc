@@ -1,3 +1,0 @@
-{
-  "extends": ["important-stuff", "plugin:prettier/recommended"]
-}
