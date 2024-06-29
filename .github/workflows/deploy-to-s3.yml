@@ -12,14 +12,19 @@ on:
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
+        type: string
       AWS_SECRET_ACCESS_KEY:
         required: true
+        type: string
       AWS_DEFAULT_REGION:
         required: true
+        type: string
       AWS_SESSION_TOKEN:
         required: true
+        type: string
       S3_ORIGIN_BUCKET:
         required: true
+        type: string
 
 jobs:
   install_dependencies:
@@ -41,6 +46,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Install Nx globally
+        run: npm install -g nx
 
   build:
     needs: install_dependencies
