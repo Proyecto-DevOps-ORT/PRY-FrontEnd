@@ -8,17 +8,23 @@ on:
         type: string
       CONTENTFUL_ENVIRONMENT:
         required: true
+        type: string
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
+        type: string 
       AWS_SECRET_ACCESS_KEY:
         required: true
+        type: string
       AWS_DEFAULT_REGION:
         required: true
+        type: string
       AWS_SESSION_TOKEN:
         required: true
+        type: string 
       S3_ORIGIN_BUCKET:
         required: true
+        type: string 
 
 jobs:
   install_dependencies:
@@ -69,10 +75,10 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
-          aws-region: ${{secrets.AWS_DEFAULT_REGION}}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
   deploy:
     needs: configure_aws
