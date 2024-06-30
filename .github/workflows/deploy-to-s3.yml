@@ -33,6 +33,12 @@ jobs:
       - name: Install Nx globally
         run: sudo npm install -g nx@14.7.5
 
+      - name: Change permissions of build.sh
+        run: chmod +x ./.github/scripts/build.sh
+
+      - name: Change permissions of deploy.sh
+        run: chmod +x ./.github/scripts/deploy.sh
+        
     outputs:
       workspace: ${{ steps.checkout.outputs.workspace }}
 
