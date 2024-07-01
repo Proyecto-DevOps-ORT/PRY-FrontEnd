@@ -69,15 +69,12 @@ jobs:
         with:
           fetch-depth: 5
 
-      - name: Debug AWS Region
-        run: echo "AWS_REGION is ${{ secrets.AWS_REGION }}"
-        
       - name: Set up AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
       - name: Sync S3
         run: aws s3 sync ./dist/apps/catalog s3://${{ secrets.S3_ORIGIN_BUCKET }} --delete
