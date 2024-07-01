@@ -75,7 +75,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
-          aws_session_token: ${{ secrets.AWS_SESSION_TOKEN}}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN}}
 
       - name: Sync S3
         run: aws s3 sync ./dist/apps/catalog s3://${{ secrets.S3_ORIGIN_BUCKET }} --delete
@@ -98,7 +98,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
-          aws_session_token: ${{ secrets.AWS_SESSION_TOKEN}}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN}}
       
       - name: Change permissions of deploy.sh
         run: chmod +x ./.github/scripts/deploy.sh
