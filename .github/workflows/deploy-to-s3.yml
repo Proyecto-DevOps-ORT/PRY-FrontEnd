@@ -49,6 +49,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
+      
+      - name: Install Nx globally
+        run: sudo npm install -g nx@14.7.5
           
       - name: Change permissions of build.sh
         run: chmod +x ./.github/scripts/build.sh
