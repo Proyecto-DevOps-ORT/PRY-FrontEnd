@@ -57,7 +57,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: Install-Dependencies
     
-    steps: 
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 5
+ 
       - name: List files in root directory
         run: ls -la
         
@@ -76,7 +80,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: Build
     
-    steps: 
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 5
+ 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -90,6 +98,10 @@ jobs:
     needs: Configure-AWS-Credentials
 
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 5
+
       - name: Change permissions of deploy.sh
         run: chmod +x ./.github/scripts/deploy.sh
 
