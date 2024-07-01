@@ -58,8 +58,8 @@ jobs:
     needs: Install-Dependencies
     
     steps: 
-      - name: List files in ./.github/scripts
-        run: ls -la ./.github/scripts
+      - name: List files in root directory
+        run: ls -la
         
       - name: Change permissions of build.sh
         run: chmod +x ./.github/scripts/build.sh
