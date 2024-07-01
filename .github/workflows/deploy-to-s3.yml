@@ -58,6 +58,9 @@ jobs:
     needs: Install-Dependencies
     
     steps: 
+      - name: List files in ./.github/scripts
+        run: ls -la ./.github/scripts
+        
       - name: Change permissions of build.sh
         run: chmod +x ./.github/scripts/build.sh
 
@@ -89,7 +92,7 @@ jobs:
     steps:
       - name: Change permissions of deploy.sh
         run: chmod +x ./.github/scripts/deploy.sh
-        
+
       - name: S3 Deploy
         run: ./.github/scripts/deploy.sh
         shell: bash
