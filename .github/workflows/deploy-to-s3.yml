@@ -30,9 +30,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Nx globally
-        run: sudo npm install -g nx@14.7.5
-
     outputs:
       workspace: ${{ steps.checkout.outputs.workspace }}
 
@@ -50,8 +47,8 @@ jobs:
         with:
           node-version: '16'
       
-      - name: Install Nx globally
-        run: sudo npm install -g nx@14.7.5
+      - name: Install dependencies
+        run: npm ci
           
       - name: Change permissions of build.sh
         run: chmod +x ./.github/scripts/build.sh
