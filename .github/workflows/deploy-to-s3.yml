@@ -58,7 +58,11 @@ jobs:
     needs: Install-Dependencies
     
     steps:
-        
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 5 
+          
       - name: Change permissions of build.sh
         run: chmod +x ./.github/scripts/build.sh
 
