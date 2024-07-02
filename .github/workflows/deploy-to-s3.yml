@@ -104,9 +104,6 @@ jobs:
 
       - name: Change permissions of deploy.sh
         run: chmod +x ./.github/scripts/deploy.sh
-        
-      - name: Install dependencies
-        run: npm ci
 
       - name: S3 Deploy
         run: ./.github/scripts/deploy.sh
