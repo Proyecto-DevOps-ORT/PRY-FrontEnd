@@ -122,6 +122,7 @@ jobs:
           aws-region: ${{secrets.AWS_DEFAULT_REGION}}
 
       - name: S3 Deploy
-        run: |
-          cd dist/apps/catalog 
-          aws s3 sync ./ s3://dev-pry-devops --exclude "common/favicons/*" --exclude "_next/*" --exclude "common/assets/*" --include "common/favicons/site.webmanifest" --metadata-directive 'REPLACE' --cache-control no-cache,no-store,must-revalidate --delete
+        run: ./.github/scripts/deploy.sh
+        shell: bash
+        env:
+          S3_ORIGIN_BUCKET: ${{ secrets.S3_ORIGIN_BUCKET }}
