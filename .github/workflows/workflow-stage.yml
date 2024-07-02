@@ -6,7 +6,7 @@ on:
       - staging
   repository_dispatch:
     types:
-      - build-stage
+      - CICD-stage
   workflow_dispatch:
 
 concurrency:
@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-dev:
+  CICD-stage:
     uses: Proyecto-DevOps-ORT/PRY-FrontEnd/.github/workflows/deploy-to-s3.yml@staging
     with:
       CI_ENV: staging
