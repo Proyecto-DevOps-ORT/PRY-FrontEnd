@@ -58,11 +58,10 @@ jobs:
     needs: Install-Dependencies
     
     steps:
-
       - uses: actions/checkout@v2
         with:
           fetch-depth: 5 
-          
+
       - name: Change permissions of build.sh
         run: chmod +x ./.github/scripts/build.sh
 
@@ -88,7 +87,6 @@ jobs:
     needs: Build
     
     steps:
- 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -102,6 +100,10 @@ jobs:
     needs: Configure-AWS-Credentials
 
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 5 
+          
       - name: Download build artifacts
         uses: actions/download-artifact@v2
         with:
