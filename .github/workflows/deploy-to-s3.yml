@@ -102,6 +102,9 @@ jobs:
         with:
           fetch-depth: 5
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Change permissions of deploy.sh
         run: chmod +x ./.github/scripts/deploy.sh
 
