@@ -114,7 +114,6 @@ jobs:
         run: chmod +x ./.github/scripts/deploy.sh
 
       - name: S3 Deploy
-        run: ./.github/scripts/deploy.sh
-        shell: bash
-        env:
-          S3_ORIGIN_BUCKET: ${{ secrets.S3_ORIGIN_BUCKET }}
+        run: |
+          cd dist/apps/catalog 
+          aws s3 sync ./ s3://$S3_ORIGIN_BUCKET --exclude "common/favicons/*" --exclude "_next/*" --exclude "common/assets/*" --include "common/favicons/site.webmanifest" --metadata-directive 'REPLACE' --cache-control no-cache,no-store,must-revalidate --delete
