@@ -95,13 +95,6 @@ jobs:
           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: ${{secrets.AWS_DEFAULT_REGION}}
 
-      - name: Set AWS credentials environment variables
-        run: |
-          echo "AWS_ACCESS_KEY_ID=${{secrets.AWS_ACCESS_KEY_ID}}" >> $GITHUB_ENV
-          echo "AWS_SECRET_ACCESS_KEY=${{secrets.AWS_SECRET_ACCESS_KEY}}" >> $GITHUB_ENV
-          echo "AWS_SESSION_TOKEN=${{secrets.AWS_SESSION_TOKEN}}" >> $GITHUB_ENV
-          echo "AWS_DEFAULT_REGION=${{secrets.AWS_DEFAULT_REGION}}" >> $GITHUB_ENV
-
   Deploy:
     runs-on: ubuntu-latest
     needs: Configure-AWS-Credentials
@@ -120,12 +113,16 @@ jobs:
       - name: Change permissions of deploy.sh
         run: chmod +x ./.github/scripts/deploy.sh
 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region: ${{secrets.AWS_DEFAULT_REGION}}
+
       - name: S3 Deploy
         run: ./.github/scripts/deploy.sh
         shell: bash
         env:
           S3_ORIGIN_BUCKET: ${{ secrets.S3_ORIGIN_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ env.AWS_SECRET_ACCESS_KEY }}
-          AWS_SESSION_TOKEN: ${{ env.AWS_SESSION_TOKEN }}
-          AWS_DEFAULT_REGION: ${{ env.AWS_DEFAULT_REGION }}
