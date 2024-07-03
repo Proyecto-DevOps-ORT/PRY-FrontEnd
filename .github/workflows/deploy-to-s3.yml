@@ -120,7 +120,7 @@ jobs:
       - name: Change permissions of deploy.sh
         run: chmod +x ./.github/scripts/deploy.sh
 
-       - name: S3 Deploy
+      - name: S3 Deploy
         run: ./.github/scripts/deploy.sh
         shell: bash
         env:
