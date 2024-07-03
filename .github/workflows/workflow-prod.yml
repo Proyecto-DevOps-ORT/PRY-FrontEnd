@@ -6,7 +6,7 @@ on:
       - main
   repository_dispatch:
     types:
-      - build-prod
+      - CICD-prod
   workflow_dispatch:
 
 concurrency:
@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-dev:
+  CICD-prod:
     uses: Proyecto-DevOps-ORT/PRY-FrontEnd/.github/workflows/deploy-to-s3.yml@main
     with:
       CI_ENV: production
