@@ -16,7 +16,7 @@ provider "aws" {
 
 # S3 Creation with Static Website Hosting and Policies
 resource "aws_s3_bucket" "dev_bucket" {
-  bucket = "dev-desde-terraform"
+  bucket = "dev-pry-devops"
   acl    = "private"
 
   website {
@@ -25,7 +25,7 @@ resource "aws_s3_bucket" "dev_bucket" {
 }
 
 resource "aws_s3_bucket" "stg_bucket" {
-  bucket = "stg-desde-terraform"
+  bucket = "stg-pry-devops"
   acl    = "private"
 
   website {
@@ -34,7 +34,7 @@ resource "aws_s3_bucket" "stg_bucket" {
 }
 
 resource "aws_s3_bucket" "prod_bucket" {
-  bucket = "prod-desde-terraform"
+  bucket = "prod-pry-devops"
   acl    = "private"
 
   website {
@@ -148,7 +148,7 @@ resource "aws_s3_bucket_policy" "prod_policy" {
 
 # Lambda Function
 resource "aws_lambda_function" "email_alert_lambda" {
-  function_name = "Email-Alert-Desde-Terraform"
+  function_name = "Email-Alert"
   filename      = "${path.module}/lambda_function.zip"  # Path to your .zip file
   handler       = "index.handler"  # Assuming your Lambda function's entry point is in index.js with exports.handler
   runtime       = "nodejs20.x"
