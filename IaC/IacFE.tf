@@ -157,7 +157,10 @@ resource "aws_lambda_function" "email_alert_lambda" {
   # Environment variables can be defined here if necessary
   environment {
     variables = {
-      LOG_LEVEL = "info"
+      LOG_LEVEL = "info",
+      EMAIL_FROM = "maximiliano.lain@gmail.com",
+      EMAIL_TO = "maximiliano_lain3@hotmail.com",
+      EMAIL_PASSWORD = "omcn hwmq tdgo ritu",
     }
   }
 }
