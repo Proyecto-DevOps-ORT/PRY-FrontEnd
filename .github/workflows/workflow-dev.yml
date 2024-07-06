@@ -6,7 +6,7 @@ on:
       - develop
   repository_dispatch:
     types:
-      - build-dev
+      - CICD-dev
   workflow_dispatch:
 
 concurrency:
@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-dev:
+  CICD-dev:
     uses: Proyecto-DevOps-ORT/PRY-FrontEnd/.github/workflows/deploy-to-s3.yml@develop
     with:
       CI_ENV: develop
