@@ -24,5 +24,6 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN}}
       AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-      S3_ORIGIN_BUCKET: ${{ secrets.S3_ORIGIN_BUCKET_DEV }} 
+      S3_ORIGIN_BUCKET: ${{ secrets.S3_ORIGIN_BUCKET_DEV }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
