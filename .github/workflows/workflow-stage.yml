@@ -25,5 +25,4 @@ jobs:
       AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN}}
       AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       S3_ORIGIN_BUCKET: ${{ secrets.S3_ORIGIN_BUCKET_STG }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
