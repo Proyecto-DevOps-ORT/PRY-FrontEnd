@@ -23,8 +23,6 @@ on:
         required: true
       S3_ORIGIN_BUCKET:
         required: true
-      GITHUB_TOKEN:
-        required: true
       SONAR_TOKEN:
         required: true
 
